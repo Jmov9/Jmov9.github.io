@@ -4,6 +4,10 @@
 }
 .h1 {text-align: center;}
 
-.kuva1 {align-items: right;}
+.kuva1 {align-items: left;
+float:none;
+}
 
-.teksti {align-items: left;}
+.teksti {align-items: left;
+
+    float: right;}
