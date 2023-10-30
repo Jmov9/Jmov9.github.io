@@ -2,12 +2,20 @@
     box-sizing: border-box;
     background-color: aliceblue;
 }
-.h1 {text-align: center;}
 
-.kuva1 {align-items: left;
-float:none;
+h1 {
+    text-align: center;
 }
 
-.teksti {align-items: left;
+.kuva {
+    align-items: left;
+    float: left;
+    max-width: 40px;
+    max-height: 80px;
+}
 
-    float: right;}
+.teksti {
+    align-items: right;
+
+    float: right;
+}
