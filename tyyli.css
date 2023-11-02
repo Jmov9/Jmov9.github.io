@@ -3,25 +3,45 @@
     background-color: #faebeb;
 }
 
+
+nav {
+    text-align: center;
+}
+
 nav a {
-    display:inline-flex;
-    flex-direction: column;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     background-color: #f7a0a0;
-    padding: 3%4%4%;
+    padding: 3% 4% 4%;
     color: inherit;
-    text-align: center!important;
+    text-align: center !important;
     border-radius: 10%;
     width: auto;
-
-    
-
 }
+
+
+
 nav a:hover {
     color: #e10017!important;
     text-decoration: none;
 
 
+}
+
+
+.linkit {
+    text-decoration: none!important;
+    color: inherit;
+}
+.linkit:hover {
+    color: #e10017;
+}
+a:hover {
+    color: #e10017 !important;; 
+    text-decoration: underline;
+    
 }
 
 
