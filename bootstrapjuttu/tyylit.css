@@ -1,0 +1,152 @@
+/* taustan väri */
+
+.navbar-custom {
+    /* background-color: rgba(137, 17, 76, 0.9);*/
+    background-color: #E33E33;
+
+}
+
+/* brandin ja tekstin väri */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    /*color: rgba(241, 135, 187, 0.8);*/
+    color: #DFDAD6;
+
+
+}
+
+/* linkin väri */
+.navbar-custom .navbar-nav .nav-link {
+    /*color: rgba(241, 135, 187, 0.8);*/
+    color: #DFDAD6;
+
+}
+
+/* aktiivisen & hover-linkin väri */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: #DFDAD6;
+}
+
+.custom-toggler.navbar-toggler:focus {
+    border: black solid 4px;
+    box-shadow: #DFDAD6(241, 112, 174, 0.9)
+}
+
+.nav-item .dropdown-menu a:hover {
+    color: white !important;
+    background: black !important;
+    cursor: pointer;
+}
+
+h1 {
+    font-family: 'Lora', serif;
+    text-align: center;
+
+}
+
+p {
+    font-family: 'Lora', sans-serif
+}
+
+h2 {
+    font-family: 'Lora', serif;
+    text-align: center;
+}
+h3 {
+    font-family: 'Lora', serif;
+    text-align: center;
+}
+
+.carousel-inner img {
+    width: 100%;
+    /* Set width to 100% */
+    margin-top: 87px;
+
+    height: auto;
+    max-width: 100%;
+    /* min-height: 100%;
+     max-height: 150%;*/
+
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+#meista img {
+    padding-top: 70px !important;
+    width: 100%;
+    border-radius: 3%;
+}
+
+body {
+    position: relative;
+}
+
+
+.card menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+#menu1 #menu2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.nav-tabs {
+    padding: 20%;
+
+}
+
+.card img {
+    height: 65%;
+}
+
+.label-box {
+    /*display: inline-block;*/
+    display: flex;
+    padding: 5px 5px;
+    /*margin-top: 20%;*/
+    margin: 10% 10% 10%;
+    background-color:#E33E33;
+    border: 2px solid #4f0000;
+    border-radius: 5px;
+    color:#DFDAD6;
+    vertical-align: top;
+    flex-direction: column;
+    
+
+    
+    
+     
+
+}
+
+
+.label-container {
+    vertical-align: top;
+    width: 6em;
+
+}
+@media (min-width: 536px) {
+    .label-box {
+        margin: 10% 30%; /* Adjust margins for screens larger than 320px */
+    }
+}
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="f1">
+
+<head>
+    <title> JSON-harjoitus </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href=tyyli.css>
+    </link>
+
+</head>
+
+<body>
+
+
+
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Etusivu</a>
+        <a href="ticokahvila.html" class="active">Ticokahvila</a>
+        <a href="palaveri.html">Palaveri</a>
+        <a href="tyot.html">Työt</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div id="vastaus"></div>
+
+    <script>
+        fetch('https://run.mocky.io/v3/2df22051-cf35-4ac1-896b-a3a668d123a5')
+            // Muunnetaan vastaus JSON muotoon
+            .then(function (response) {
+                return response.json();
+            })
+            // Käsitellään muunnettu (eli JSON muotoinen) vastaus
+            .then(function (responseJson) {
+                // Testataan onnistuuko json-luku
+                // jos onnistuu päivitetään tähän json-datan käsittelevän funktion kutsu
+
+                kerro(responseJson);
+            })
+            // Jos tuli jokin virhe
+            .catch(function (error) {
+                document.getElementById("vastaus").innerHTML =
+                    "<p>Tietoa ei pystytä hakemaan</p>";
+            })
+
+        function kerro(data) {
+            var teksti = ""; // määritellään muuttuja, johon tulostettava tieto kerätään
+            // otsikkotiedon hakeminen ja sijoittaminen h1-elementtiin
+            teksti = "<h1>" + data.yritys + "</h1>";
+            // tähän tulee muiden tietojen käsittely kohta
+            // teksti-muuttujan sisällön tulostus
+            teksti = teksti + "<h3>Yhteystiedot:</h3>"
+            teksti = teksti + "<p>" + data.yhteystiedot.osoite + " " + data.yhteystiedot.puhelin + " " + data.yhteystiedot.email + "<p/>";
+            teksti = teksti + "<ul>"
+            teksti = teksti + "<h3>Tuotteet:</h3>"    
+            for (var i = 0; i < data.tuotteet.length; i++) {
+                teksti = teksti + "<li>" + data.tuotteet[i] + "</li>";
+
+
+            }
+            teksti = teksti + "</ul>"
+            teksti = teksti + "<h3>Henkilökunta:</h3>"
+            for (var i = 0; i < data.henkilokunta.length; i++) {
+                teksti = teksti + "<p>" + data.henkilokunta[i].nimi + ", "+ data.henkilokunta[i].titteli + "</p>";
+
+
+            }
+            
+
+
+
+            document.getElementById("vastaus").innerHTML = teksti;
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+
+
+
+
+
+</html>
