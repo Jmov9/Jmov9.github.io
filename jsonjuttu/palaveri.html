@@ -16,7 +16,7 @@
     <div class="topnav" id="myTopnav">
         <a href="index.html">Etusivu</a>
         <a href="ticokahvila.html">Ticokahvila</a>
-        <a href="palaveri.html"class="active">Palaveri</a>
+        <a href="palaveri.html" class="active">Palaveri</a>
         <a href="tyot.html">Työt</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
@@ -26,7 +26,7 @@
     <div id="vastaus"></div>
 
     <script>
-        fetch('https://run.mocky.io/v3/28ead350-d1e6-47c2-aee1-8f3f85084ae3')
+        fetch('https://run.mocky.io/v3/eb5762ad-ce48-45d7-9a03-826811afb4f1')
             // Muunnetaan vastaus JSON muotoon
             .then(function (response) {
                 return response.json();
@@ -45,13 +45,31 @@
             })
 
         function kerro(data) {
+
             var teksti = ""; // määritellään muuttuja, johon tulostettava tieto kerätään
             // otsikkotiedon hakeminen ja sijoittaminen h1-elementtiin
-            teksti = "<h1>" + data.yritys + "</h1>";
+
+            teksti = "<h1>" + " " + "Palaverin aihe: " + data.palaveri + "</h1>";
             // tähän tulee muiden tietojen käsittely kohta
             // teksti-muuttujan sisällön tulostus
-        
-           
+            teksti = teksti + "<h3>Yhteystiedot:</h3>"
+
+            teksti = teksti + "<p>" + "<li>" + data.yhteystiedot.osoite + "<li>" + data.yhteystiedot.päivämäärä + "<p/>";
+            teksti = teksti + "<h3>" + "Kesto:" + "</h3>" + "<li>" + data.yhteystiedot.kesto + "";
+            teksti = teksti + "<h3>" + "Osallistujien lukumäärä:" + "</h3>" + "<li>" + data.yhteystiedot.lukumäärä + "";
+            teksti = teksti + "<ul>"
+
+
+
+
+            teksti = teksti + "<h3>Osallistujat:</h3>"
+            for (var i = 0; i < data.osallistujat.length; i++) {
+                teksti = teksti + "<p>" + data.osallistujat[i].nimi + "</p>";
+
+
+            }
+
+
 
 
 
@@ -59,7 +77,7 @@
 
             document.getElementById("vastaus").innerHTML = teksti;
         }
-       
+
 
     </script>
 

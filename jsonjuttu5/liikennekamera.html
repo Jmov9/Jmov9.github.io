@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <title> JSON-harjoitus osa 2 </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href=tyyli.css>
+    </link>
+
+</head>
+
+<body>
+
+
+
+    <div class="topnav" id="myTopnav">
+        <a href="tapahtumat.html">Tapahtumat</a>
+        <a href="saa.html">Sää</a>
+        <a href="liikennekamera.html" class="active">Liikennekamera</a>
+        <a href="junat.html">Junat</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <script>
+        fetch('https://tie.digitraffic.fi/api/weathercam/v1/stations')
+            // Muunnetaan vastaus JSON muotoon
+            .then(function (response) {
+                return response.json();
+            })
+            // Käsitellään muunnettu (eli JSON muotoinen) vastaus
+            .then(function (responseJson) {
+                // kutsutaan saa-funktiota
+                saa(responseJson);
+            })
+            // Jos tuli jokin virhe
+            .catch(function (error) {
+                document.getElementById("vastaus").innerHTML =
+                    "<p>Tietoa ei pystytä hakemaan</p>";
+            })
+        function saa(data) {
+            var teksti = ""; // määritellään muuttuja, johon tulostettava tieto kerätään
+            // otsikkotiedon hakeminen ja sijoittaminen h1-elementtiin
+            
+            for (var i = 0;
+                i < data.features.length; i++)
+                teksti = teksti + "<p>" + data.features[i].id ;
+                
+                
+                
+                
+
+
+
+
+                document.getElementById("vastaus").innerHTML = teksti;
+        }
+
+
+
+
+    </script>
+
+    <div id="vastaus"></div>
+</body>
+
+</html>
